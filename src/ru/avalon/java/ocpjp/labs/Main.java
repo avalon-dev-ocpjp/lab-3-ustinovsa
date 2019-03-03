@@ -1,7 +1,6 @@
 package ru.avalon.java.ocpjp.labs;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Properties;
@@ -15,8 +14,6 @@ import java.util.Properties;
  *
  * @author Daniel Alpatov <danial.alpatov@gmail.com>
  */
-
-
 public class Main {
 
     /**
@@ -24,18 +21,10 @@ public class Main {
      * 
      * @param args the command line arguments
      */
-
-    private static String url = "jdbc:postgresql://localhost:5432/ulanov";
-    private static String user = "postgres";
-    private static String password = "password";
-    private static Connection connection;
-
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) throws SQLException {
         /*
          * TODO #01 Подключите к проекту все библиотеки, необходимые для соединения с СУБД.
          */
-
-
         try (Connection connection = getConnection()) {
             ProductCode code = new ProductCode("MO", 'N', "Movies");
             code.save(connection);
@@ -70,7 +59,7 @@ public class Main {
         /*
          * TODO #02 Реализуйте метод getUrl
          */
-        return url;
+        throw new UnsupportedOperationException("Not implemented yet!");
     }
     /**
      * Возвращает параметры соединения
@@ -82,29 +71,19 @@ public class Main {
         /*
          * TODO #03 Реализуйте метод getProperties
          */
-        Properties properties = new Properties();
-        properties.setProperty("user", user); //
-        properties.setProperty("password", password);
-
-        return properties;
-
+        throw new UnsupportedOperationException("Not implemented yet!");
     }
     /**
      * Возвращает соединение с базой данных Sample
      * 
      * @return объект типа {@link Connection}
-     * @throws SQLException
-
+     * @throws SQLException 
      */
-    private static Connection getConnection() throws SQLException, ClassNotFoundException {
+    private static Connection getConnection() throws SQLException {
         /*
          * TODO #04 Реализуйте метод getConnection
          */
-        if(connection == null) {
-            Properties properties = getProperties();
-            Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection(getUrl(), properties.getProperty("user"), properties.getProperty("password"));
-        }
-        return connection;
+        throw new UnsupportedOperationException("Not implemented yet!");
     }
+    
 }
